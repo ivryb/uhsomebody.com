@@ -140,3 +140,6 @@ vite.config.ts.timestamp-*
 
 # Design experiments, never committed
 prototype/
+
+# Wrangler's local cache
+.wrangler/
