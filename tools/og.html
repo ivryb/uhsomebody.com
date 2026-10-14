@@ -1,0 +1,27 @@
+<!doctype html>
+<!-- The OG image: the studio cropped to the desk, with the name over the skyline. It runs the live scene, so
+     each render has slightly different screens. Render to /og.jpg with: bun tools/render-og.ts (site served
+     at http://localhost:4317). -->
+<meta charset="utf-8" />
+<style>
+  @font-face { font-family: "IBM Plex Mono"; font-weight: 400; src: url("/assets/IBMPlexMono-400.woff2") format("woff2"); }
+  @font-face { font-family: "IBM Plex Mono"; font-weight: 500; src: url("/assets/IBMPlexMono-500.woff2") format("woff2"); }
+  @font-face { font-family: "IBM Plex Mono"; font-weight: 600; src: url("/assets/IBMPlexMono-600.woff2") format("woff2"); }
+  @font-face { font-family: "Departure Mono"; src: url("/assets/DepartureMono-Regular.woff2") format("woff2"); }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: #000; color: #f2efe9; font-family: "IBM Plex Mono", monospace; position: relative; }
+  .scene { position: absolute; left: 0; top: -560px; width: 1152px; height: 1548px; transform: scale(1.042); transform-origin: 0 0; }
+  .scene canvas { display: block; width: 100%; height: 100%; }
+  .sky { position: absolute; inset: 0; background: linear-gradient(#0008 0, #0006 30%, #0000 50%); }
+  .title { position: absolute; left: 0; right: 0; top: 74px; text-align: center; }
+  h1 { font: 400 92px/1 "Departure Mono", monospace; text-shadow: 0 0 30px #000; }
+  p { margin-top: 14px; font-size: 26px; text-shadow: 0 0 12px #000; }
+  p span { color: #f0c850; }
+</style>
+<div class="scene"></div>
+<div class="sky"></div>
+<div class="title"><h1>Ivan Rybnikov</h1><p>Product engineer · <span>ivryb.com</span></p></div>
+<script type="module">
+  import mount from "/scripts/room.js";
+  mount(document.querySelector(".scene"));
+</script>

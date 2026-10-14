@@ -1,0 +1,16 @@
+// ivryb.com: a static site served by Cloudflare Workers Static Assets, no Worker code.
+// Deploy with: bunx wrangler deploy
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ivryb",
+  "account_id": "8a66125b4def6052f9afa0b466b8c04a",
+  "compatibility_date": "2026-10-14",
+  "assets": {
+    "directory": "public",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "ivryb.com", "custom_domain": true },
+    { "pattern": "www.ivryb.com", "custom_domain": true }
+  ]
+}
